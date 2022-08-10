@@ -6,7 +6,7 @@ const geoLocation = require("./utils/geoLocation")
 const weather = require("./utils/forecast")
 
 const app = express()
-
+const port=process.env.PORT || 8080;
 const publicDirectory = path.join(__dirname, "../public")
 const viewDirectory = path.join(__dirname, "../templates/views/")
 const partialDirectory = path.join(__dirname, "../templates/partials/")
@@ -68,4 +68,4 @@ app.get("*", (req, resp) => {
   })
 })
 
-app.listen(8080, () => console.log("listening on port 8080"))
+app.listen(port, () => console.log("listening on port"+port))
